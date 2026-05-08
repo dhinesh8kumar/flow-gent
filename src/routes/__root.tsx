@@ -75,11 +75,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Flowgent — WhatsApp AI Booking for Service Businesses" },
       { name: "description", content: "Flowgent automates customer bookings via WhatsApp AI and gives your team a modern multi-tenant dashboard to run operations." },
       { name: "author", content: "Flowgent" },
-      { property: "og:title", content: "Flowgent — WhatsApp AI Booking SaaS" },
-      { property: "og:description", content: "Let an AI chatbot take bookings on WhatsApp while your team manages everything from one dashboard." },
+      { property: "og:title", content: "Flowgent — WhatsApp AI Booking for Service Businesses" },
+      { property: "og:description", content: "Flowgent automates customer bookings via WhatsApp AI and gives your team a modern multi-tenant dashboard to run operations." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Flowgent — WhatsApp AI Booking for Service Businesses" },
+      { name: "twitter:description", content: "Flowgent automates customer bookings via WhatsApp AI and gives your team a modern multi-tenant dashboard to run operations." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d298150b-2d44-4787-86a4-c26e8523cd64/id-preview-f371c23e--aac52edb-3be4-429e-bcd6-3ef0936cdf8b.lovable.app-1778278175421.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d298150b-2d44-4787-86a4-c26e8523cd64/id-preview-f371c23e--aac52edb-3be4-429e-bcd6-3ef0936cdf8b.lovable.app-1778278175421.png" },
     ],
     links: [
       {
