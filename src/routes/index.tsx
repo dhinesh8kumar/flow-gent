@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion, useScroll, useTransform, useSpring, useMotionValue } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import {
-  MessageCircle, Bot, LayoutDashboard, Truck, Shield,
+  MessageCircle, Bot, LayoutDashboard,
   Sparkles, ArrowRight, Check, Zap, Globe, Database, Menu, X,
   Phone, Video, Plus, Mic, Smile, Camera, ChevronLeft
 } from "lucide-react";
@@ -84,7 +84,6 @@ function Nav() {
             ))}
           </nav>
           <div className="hidden md:flex items-center gap-3">
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground">Sign in</a>
             <a href="#cta" className="inline-flex items-center gap-1.5 rounded-full bg-gradient-primary text-primary-foreground px-4 py-2 text-sm font-semibold shadow-glow hover:scale-105 transition-transform">
               Get access <ArrowRight className="h-3.5 w-3.5" />
             </a>
@@ -299,10 +298,8 @@ function ChatMockup() {
 const features = [
   { icon: Bot, title: "Conversational AI booking", desc: "Llama-3.1-70B understands natural language orders and quotes accurate prices in real time." },
   { icon: LayoutDashboard, title: "Modern admin dashboard", desc: "Bookings, fleet, customers and revenue — all in a fast React 18 + TanStack Query interface." },
-  { icon: Globe, title: "Multi-tenant by design", desc: "One backend, many companies. Each tenant has their own number, pricing and customers." },
-  { icon: Truck, title: "Fleet management", desc: "Add tankers, assign drivers, track deliveries. Auto-assign by locality and availability." },
-  { icon: Database, title: "Dynamic pricing", desc: "Update prices and rules from the dashboard — no redeploy. Injected into every AI prompt." },
-  { icon: Shield, title: "JWT + RBAC security", desc: "Role-based access for SUPER_ADMIN, ADMIN and OPERATOR. Tenant isolation everywhere." },
+  { icon: Database, title: "Live pricing & service catalog", desc: "Edit your services, packages and prices from the dashboard — the AI quotes the new rate on the very next message." },
+  { icon: Globe, title: "Works on the apps customers already use", desc: "No new app to install. Customers chat on WhatsApp, you stay in control from one clean dashboard." },
 ];
 
 function Features() {
