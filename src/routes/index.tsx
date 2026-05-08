@@ -3,7 +3,8 @@ import { motion, useScroll, useTransform, useSpring, useMotionValue } from "fram
 import { useRef, useState, useEffect } from "react";
 import {
   MessageCircle, Bot, LayoutDashboard, Truck, Shield,
-  Sparkles, ArrowRight, Check, Zap, Globe, Database, Send, Menu, X
+  Sparkles, ArrowRight, Check, Zap, Globe, Database, Menu, X,
+  Phone, Video, Plus, Mic, Smile, Camera, ChevronLeft
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -179,50 +180,116 @@ function Hero() {
 }
 
 function ChatMockup() {
-  const messages = [
-    { from: "user", text: "Book 10KL sweet water tomorrow morning Kondapur" },
-    { from: "bot", text: "Got it! 10KL sweet water to Kondapur tomorrow ~7AM. Total ₹700. Confirm?" },
-    { from: "user", text: "Yes please" },
-    { from: "bot", text: "✅ Booking #FG-2841 confirmed. Driver Ravi will arrive 6:45-7:15AM." },
+  const messages: Array<{ from: "user" | "bot"; text: string; time: string }> = [
+    { from: "user", text: "Hi! Need a quote for 1.5 ton split AC installation in a 2BHK, Kondapur.", time: "10:24 AM" },
+    { from: "bot", text: "Hi Aarav 👋 Standard 1.5T split AC install is ₹1,899 (copper up to 3m, drilling, gas top-up, demo). Extra copper: ₹450/m. Want to book?", time: "10:24 AM" },
+    { from: "user", text: "Yes — also full body PPF for my Creta. What's the price?", time: "10:25 AM" },
+    { from: "bot", text: "🚗 PPF (TPU, 10yr warranty) for Hyundai Creta — Full body: ₹64,999. Front PPF only: ₹19,999. Free pickup & drop in Kondapur.", time: "10:25 AM" },
+    { from: "user", text: "Book the AC install for tomorrow morning + full body PPF this Saturday.", time: "10:26 AM" },
+    { from: "bot", text: "✅ Booked!\n• AC install — Tue 10AM, tech Ravi\n• PPF Full body — Sat, pickup 9AM\nTotal ₹66,898. Ref #FG-2841", time: "10:26 AM" },
   ];
   const [shown, setShown] = useState(0);
   useEffect(() => {
     if (shown >= messages.length) return;
-    const t = setTimeout(() => setShown(s => s + 1), 900);
+    const t = setTimeout(() => setShown(s => s + 1), 1100);
     return () => clearTimeout(t);
   }, [shown]);
+  const time = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
   return (
-    <div className="relative rounded-3xl neu p-2 overflow-hidden">
-      <div className="rounded-[20px] overflow-hidden neu-inset">
-        <div className="flex items-center justify-between px-5 py-3 bg-background">
-          <div className="flex items-center gap-3">
-            <div className="h-10 w-10 rounded-full neu-sm flex items-center justify-center"><Bot className="h-4 w-4 text-primary" /></div>
-            <div>
-              <div className="text-sm font-semibold">Flowgent AI</div>
-              <div className="text-[10px] text-primary flex items-center gap-1"><span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" /> online</div>
-            </div>
+    <div className="relative mx-auto" style={{ maxWidth: 360 }}>
+      {/* iPhone frame */}
+      <div
+        className="relative rounded-[3rem] p-[10px] neu"
+        style={{ background: "linear-gradient(145deg, oklch(0.97 0.005 250), oklch(0.86 0.02 250))" }}
+      >
+        <div className="rounded-[2.5rem] overflow-hidden bg-[#E5DDD5] relative" style={{ aspectRatio: "9 / 19.5" }}>
+          {/* Dynamic Island */}
+          <div className="absolute top-2 left-1/2 -translate-x-1/2 z-30 h-7 w-28 rounded-full bg-black" />
+          {/* iOS status bar */}
+          <div className="relative z-20 flex items-center justify-between px-6 pt-3 pb-2 text-black text-[11px] font-semibold bg-[#075E54]">
+            <span className="text-white">{time}</span>
+            <span className="opacity-0">.</span>
+            <span className="flex items-center gap-1 text-white">
+              <svg width="14" height="10" viewBox="0 0 14 10" fill="currentColor"><path d="M1 9h2V6H1v3zm4 0h2V4H5v5zm4 0h2V2H9v7zm4 0h2V0h-2v9z"/></svg>
+              <svg width="14" height="10" viewBox="0 0 14 10" fill="currentColor"><path d="M7 1.5C4.5 1.5 2.3 2.5.7 4l1 1.2C3.1 3.9 5 3 7 3s3.9.9 5.3 2.2l1-1.2C11.7 2.5 9.5 1.5 7 1.5zM7 4.5c-1.7 0-3.2.6-4.4 1.6l1 1.2C4.5 6.5 5.7 6 7 6s2.5.5 3.4 1.3l1-1.2C10.2 5.1 8.7 4.5 7 4.5zM7 7.5c-.8 0-1.6.3-2.2.8L7 10l2.2-1.7c-.6-.5-1.4-.8-2.2-.8z"/></svg>
+              <span className="ml-1 inline-block w-6 h-2.5 rounded-sm border border-white/80 relative">
+                <span className="absolute inset-0.5 bg-white rounded-[1px]" />
+                <span className="absolute -right-1 top-1/2 -translate-y-1/2 w-0.5 h-1.5 bg-white/80 rounded-r" />
+              </span>
+            </span>
           </div>
-          <MessageCircle className="h-4 w-4 text-muted-foreground" />
-        </div>
-        <div className="p-5 space-y-3 min-h-[360px] bg-background">
-          {messages.slice(0, shown).map((m, i) => (
-            <motion.div key={i} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className={`flex ${m.from === "user" ? "justify-end" : "justify-start"}`}>
-              <div className={`max-w-[80%] rounded-2xl px-4 py-2.5 text-sm ${m.from === "user" ? "bg-gradient-primary text-primary-foreground rounded-br-sm shadow-glow" : "neu-sm rounded-bl-sm"}`}>
-                {m.text}
-              </div>
-            </motion.div>
-          ))}
-          {shown < messages.length && (
-            <div className="flex gap-1 items-center px-3">
-              <span className="h-2 w-2 rounded-full bg-muted-foreground animate-bounce" style={{ animationDelay: "0ms" }} />
-              <span className="h-2 w-2 rounded-full bg-muted-foreground animate-bounce" style={{ animationDelay: "150ms" }} />
-              <span className="h-2 w-2 rounded-full bg-muted-foreground animate-bounce" style={{ animationDelay: "300ms" }} />
+          {/* WhatsApp header */}
+          <div className="bg-[#075E54] text-white px-3 pb-3 pt-1 flex items-center gap-3">
+            <ChevronLeft className="h-5 w-5" />
+            <div className="h-9 w-9 rounded-full bg-white/20 flex items-center justify-center">
+              <Bot className="h-4 w-4 text-white" />
             </div>
-          )}
-        </div>
-        <div className="flex items-center gap-2 p-3 bg-background">
-          <div className="flex-1 rounded-full neu-inset px-4 py-2 text-xs text-muted-foreground">Type a message…</div>
-          <button className="h-10 w-10 rounded-full bg-gradient-primary flex items-center justify-center shadow-glow"><Send className="h-3.5 w-3.5 text-primary-foreground" /></button>
+            <div className="flex-1 min-w-0">
+              <div className="text-[13px] font-semibold leading-tight">Flowgent AI</div>
+              <div className="text-[10px] opacity-80">online</div>
+            </div>
+            <Video className="h-4 w-4" />
+            <Phone className="h-4 w-4" />
+          </div>
+          {/* Chat area */}
+          <div
+            className="px-3 py-3 space-y-2 overflow-hidden"
+            style={{
+              minHeight: 460,
+              backgroundImage:
+                "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'><g fill='%23d9cfc1' fill-opacity='0.4'><circle cx='10' cy='10' r='1'/><circle cx='40' cy='25' r='1'/><circle cx='65' cy='55' r='1'/><circle cx='20' cy='60' r='1'/></g></svg>\")",
+              backgroundColor: "#ECE5DD",
+            }}
+          >
+            {messages.slice(0, shown).map((m, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 8, scale: 0.96 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.25 }}
+                className={`flex ${m.from === "user" ? "justify-end" : "justify-start"}`}
+              >
+                <div
+                  className={`relative max-w-[78%] px-2.5 py-1.5 text-[12px] leading-snug whitespace-pre-line shadow-sm ${
+                    m.from === "user"
+                      ? "bg-[#DCF8C6] text-gray-900 rounded-lg rounded-br-none"
+                      : "bg-white text-gray-900 rounded-lg rounded-bl-none"
+                  }`}
+                >
+                  {m.text}
+                  <div className="flex items-center justify-end gap-1 mt-1 -mb-0.5">
+                    <span className="text-[9px] text-gray-500">{m.time}</span>
+                    {m.from === "user" && (
+                      <svg width="14" height="8" viewBox="0 0 16 8" className="text-[#34B7F1]" fill="currentColor">
+                        <path d="M11.071.653a.5.5 0 0 0-.7.097l-5.2 6.5L2.4 4.5a.5.5 0 1 0-.8.6l3.2 4.267a.5.5 0 0 0 .8 0l5.6-7a.5.5 0 0 0-.129-.714zm4 0a.5.5 0 0 0-.7.097l-5.2 6.5-1.057-1.41-.625.781 1.282 1.71a.5.5 0 0 0 .8 0l5.6-7a.5.5 0 0 0-.1-.678z"/>
+                      </svg>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+            {shown < messages.length && (
+              <div className="flex justify-start">
+                <div className="bg-white rounded-lg rounded-bl-none px-3 py-2 shadow-sm flex gap-1 items-center">
+                  <span className="h-1.5 w-1.5 rounded-full bg-gray-400 animate-bounce" style={{ animationDelay: "0ms" }} />
+                  <span className="h-1.5 w-1.5 rounded-full bg-gray-400 animate-bounce" style={{ animationDelay: "150ms" }} />
+                  <span className="h-1.5 w-1.5 rounded-full bg-gray-400 animate-bounce" style={{ animationDelay: "300ms" }} />
+                </div>
+              </div>
+            )}
+          </div>
+          {/* Input bar */}
+          <div className="absolute bottom-0 inset-x-0 bg-[#ECE5DD] px-2 py-2 flex items-center gap-1.5">
+            <div className="flex-1 bg-white rounded-full px-3 py-1.5 flex items-center gap-2 text-[11px] text-gray-500">
+              <Smile className="h-3.5 w-3.5" />
+              <span className="flex-1">Message</span>
+              <Plus className="h-3.5 w-3.5" />
+              <Camera className="h-3.5 w-3.5" />
+            </div>
+            <button className="h-8 w-8 rounded-full bg-[#075E54] flex items-center justify-center text-white">
+              <Mic className="h-3.5 w-3.5" />
+            </button>
+          </div>
         </div>
       </div>
     </div>
