@@ -13,6 +13,6 @@ export default defineConfig({
     server: { entry: "server" },
   },
   vite: {
-    base: "/Flow-gent/",
+    base: "/flow-gent/",
   },
 });
