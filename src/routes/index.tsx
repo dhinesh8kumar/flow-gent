@@ -314,7 +314,7 @@ function Features() {
             One platform for the <span className="text-gradient">entire booking flow</span>.
           </h2>
         </motion.div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6 max-w-5xl">
           {features.map((f, i) => (
             <motion.div key={f.title} {...fade(i * 0.05)}>
               <Tilt className="rounded-3xl neu p-7 neu-hover h-full">
