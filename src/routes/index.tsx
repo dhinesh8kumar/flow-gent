@@ -68,6 +68,9 @@ function Nav() {
     { href: "#features", label: "Features" },
     { href: "#flow", label: "How it works" },
   ];
+  const routeLinks = [
+    { to: "/privacy", label: "Privacy" },
+  ];
   return (
     <header className={`fixed top-0 inset-x-0 z-50 transition-all ${scrolled ? "py-3" : "py-5"}`}>
       <div className={`mx-auto max-w-6xl px-4 transition-all`}>
@@ -81,6 +84,9 @@ function Nav() {
           <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
             {links.map(l => (
               <a key={l.href} href={l.href} className="hover:text-foreground transition-colors">{l.label}</a>
+            ))}
+            {routeLinks.map(l => (
+              <Link key={l.to} to={l.to} className="hover:text-foreground transition-colors">{l.label}</Link>
             ))}
           </nav>
           <div className="hidden md:flex items-center gap-3">
@@ -97,6 +103,7 @@ function Nav() {
         <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} className="md:hidden mx-4 mt-2 rounded-2xl neu overflow-hidden">
           <div className="px-5 py-4 flex flex-col gap-4">
             {links.map(l => <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="text-sm text-muted-foreground">{l.label}</a>)}
+            {routeLinks.map(l => <Link key={l.to} to={l.to} onClick={() => setOpen(false)} className="text-sm text-muted-foreground">{l.label}</Link>)}
             <a href="#cta" onClick={() => setOpen(false)} className="rounded-full bg-gradient-primary text-primary-foreground px-4 py-2 text-sm font-semibold text-center">Get access</a>
           </div>
         </motion.div>
