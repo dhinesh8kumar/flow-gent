@@ -1,13 +1,12 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
-import path from "path";
+import { defineConfig } from 'vite'
+import tailwindcss from '@tailwindcss/vite'
+import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  base: "/flow-gent/", // This MUST match your repo name exactly
-  plugins: [react()],
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
-    },
-  },
-});
+  // Add this line below
+  base: './', 
+  plugins: [
+    react(),
+    tailwindcss(),
+  ],
+})
