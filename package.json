@@ -1,6 +1,5 @@
 {
   "name": "tanstack_start_ts",
-  "homepage": "[https://dhinesh8kumar.github.io/flow-gent/](https://dhinesh8kumar.github.io/flow-gent/)",
   "private": true,
   "sideEffects": false,
   "type": "module",
