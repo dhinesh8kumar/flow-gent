@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion, useScroll, useTransform, useSpring, useMotionValue } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import {
@@ -418,7 +418,7 @@ function Footer() {
         </div>
         <div className="text-xs text-muted-foreground">© 2026 Flowgent. Built for service businesses everywhere.</div>
         <div className="flex gap-5 text-xs text-muted-foreground">
-          <a href="#" className="hover:text-foreground">Privacy</a>
+          <Link to="/privacy" className="hover:text-foreground">Privacy</Link>
           <a href="#" className="hover:text-foreground">Terms</a>
           <a href="#" className="hover:text-foreground">Docs</a>
         </div>
