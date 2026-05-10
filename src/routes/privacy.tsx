@@ -3,10 +3,10 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
-      { title: "Privacy Policy — Flowgent" },
-      { name: "description", content: "How Flowgent collects, uses, and protects information across our WhatsApp AI booking platform." },
-      { property: "og:title", content: "Privacy Policy — Flowgent" },
-      { property: "og:description", content: "How Flowgent collects, uses, and protects information across our WhatsApp AI booking platform." },
+      { title: "Privacy Policy — Zevio" },
+      { name: "description", content: "How Zevio collects, uses, and protects information across our WhatsApp AI booking platform." },
+      { property: "og:title", content: "Privacy Policy — Zevio" },
+      { property: "og:description", content: "How Zevio collects, uses, and protects information across our WhatsApp AI booking platform." },
     ],
   }),
   component: PrivacyPage,
@@ -28,7 +28,7 @@ function PrivacyPage() {
 
       <header className="max-w-3xl mx-auto px-6 pt-10 pb-6 flex items-center justify-between">
         <Link to="/" className="text-sm font-semibold tracking-tight text-foreground/80 hover:text-foreground transition">
-          ← Flowgent
+          ← Zevio
         </Link>
         <Link
           to="/"
@@ -46,13 +46,13 @@ function PrivacyPage() {
           </p>
 
           <p className="mt-6 text-foreground/80 leading-relaxed text-[15px]">
-            This Privacy Policy describes how Flowgent ("we", "us", or "our") collects, uses, and protects information
-            when you use our platform. By using Flowgent, you agree to the practices described in this policy.
+            This Privacy Policy describes how Zevio ("we", "us", or "our") collects, uses, and protects information
+            when you use our platform. By using Zevio, you agree to the practices described in this policy.
           </p>
 
           <Section title="1. Who We Are">
             <p>
-              Flowgent is a multi-tenant SaaS platform that enables businesses ("Tenants") to manage customer bookings,
+              Zevio is a multi-tenant SaaS platform that enables businesses ("Tenants") to manage customer bookings,
               automate WhatsApp conversations using AI, and manage their operations through a web dashboard. We act as a
               data processor on behalf of our Tenant businesses, who are the data controllers for their customers' data.
             </p>
@@ -85,7 +85,7 @@ function PrivacyPage() {
 
           <Section title="3. How We Use Your Information">
             <ul className="list-disc pl-6 space-y-1">
-              <li>To operate and deliver the Flowgent platform to Tenant businesses</li>
+              <li>To operate and deliver the Zevio platform to Tenant businesses</li>
               <li>To process and manage customer bookings on behalf of Tenants</li>
               <li>To power AI-driven WhatsApp conversation responses</li>
               <li>To authenticate dashboard users and protect accounts</li>
@@ -96,7 +96,7 @@ function PrivacyPage() {
 
           <Section title="4. WhatsApp and Meta Platform Data">
             <p>
-              Flowgent integrates with the WhatsApp Business Cloud API provided by Meta Platforms, Inc. By using our
+              Zevio integrates with the WhatsApp Business Cloud API provided by Meta Platforms, Inc. By using our
               platform, you acknowledge that:
             </p>
             <ul className="list-disc pl-6 space-y-1">
@@ -160,7 +160,7 @@ function PrivacyPage() {
             <p>You can request complete deletion of your data by:</p>
             <ul className="list-disc pl-6 space-y-1">
               <li>Emailing dhineshkumarthota@gmail.com with subject "Data Deletion Request"</li>
-              <li>Using our data deletion endpoint: POST https://api.flowgent.app/meta/data-deletion</li>
+              <li>Using our data deletion endpoint: POST https://api.zevio.app/meta/data-deletion</li>
             </ul>
             <p>We will process deletion requests within 30 days and send confirmation to the requesting email address.</p>
           </Section>
@@ -174,14 +174,14 @@ function PrivacyPage() {
 
           <Section title="11. Children's Privacy">
             <p>
-              Flowgent is a business platform not directed at children under 13. We do not knowingly collect data from
+              Zevio is a business platform not directed at children under 13. We do not knowingly collect data from
               children. If you believe a child has provided us with personal data, contact us immediately.
             </p>
           </Section>
 
           <Section title="12. International Data Transfers">
             <p>
-              Our infrastructure is hosted in data centers that may be located outside your country. By using Flowgent,
+              Our infrastructure is hosted in data centers that may be located outside your country. By using Zevio,
               you consent to your data being transferred and processed in these locations. We ensure appropriate
               safeguards are in place for all international transfers.
             </p>
