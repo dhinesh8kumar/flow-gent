@@ -10,7 +10,7 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Flowgent — WhatsApp AI Booking for Service Businesses" },
+      { title: "Zevio — WhatsApp AI Booking for Service Businesses" },
       { name: "description", content: "Multi-tenant SaaS that turns WhatsApp into your booking engine. AI handles customers, your team runs the dashboard." },
     ],
   }),
@@ -79,7 +79,7 @@ function Nav() {
             <span className="relative inline-flex h-9 w-9 items-center justify-center rounded-2xl neu-sm">
               <Zap className="h-4 w-4 text-primary" />
             </span>
-            Flowgent
+            Zevio
           </a>
           <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
             {links.map(l => (
@@ -161,7 +161,7 @@ function Hero() {
             Your <span className="text-gradient">WhatsApp</span> just became your best booking agent.
           </motion.h1>
           <motion.p {...fade(0.2)} className="mt-6 text-lg text-muted-foreground max-w-xl">
-            Flowgent is a multi-tenant SaaS where an AI chatbot quotes prices, takes orders and confirms deliveries on WhatsApp — while your team runs everything from one modern dashboard.
+            Zevio is a multi-tenant SaaS where an AI chatbot quotes prices, takes orders and confirms deliveries on WhatsApp — while your team runs everything from one modern dashboard.
           </motion.p>
           <motion.div {...fade(0.3)} className="mt-8 flex flex-wrap gap-4">
             <a href="#cta" className="group inline-flex items-center gap-2 rounded-full bg-gradient-primary text-primary-foreground px-7 py-3.5 font-semibold shadow-glow hover:scale-105 transition-transform">
@@ -231,7 +231,7 @@ function ChatMockup() {
               <Bot className="h-4 w-4 text-white" />
             </div>
             <div className="flex-1 min-w-0">
-              <div className="text-[13px] font-semibold leading-tight">Flowgent AI</div>
+              <div className="text-[13px] font-semibold leading-tight">Zevio AI</div>
               <div className="text-[10px] opacity-80">online</div>
             </div>
             <Video className="h-4 w-4" />
@@ -404,7 +404,7 @@ function CTA() {
         <div className="relative rounded-[2rem] neu p-10 md:p-16 overflow-hidden">
           <div className="absolute -top-32 left-1/2 -translate-x-1/2 h-64 w-64 rounded-full bg-gradient-primary blur-3xl opacity-20 animate-pulse-glow" />
           <h2 className="font-display text-4xl md:text-6xl font-bold tracking-tight">Stop typing. <br /><span className="text-gradient">Start delivering.</span></h2>
-          <p className="mt-5 text-muted-foreground max-w-xl mx-auto">Spin up your tenant in 60 seconds. Connect your WhatsApp number. Let Flowgent do the rest.</p>
+          <p className="mt-5 text-muted-foreground max-w-xl mx-auto">Spin up your tenant in 60 seconds. Connect your WhatsApp number. Let Zevio do the rest.</p>
           <form className="mt-8 flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onSubmit={e => e.preventDefault()}>
             <input type="email" required placeholder="you@company.com" className="flex-1 rounded-full neu-inset px-5 py-3 text-sm focus:outline-none bg-transparent" />
             <button className="rounded-full bg-gradient-primary text-primary-foreground px-6 py-3 font-semibold shadow-glow hover:scale-105 transition-transform whitespace-nowrap">Get access</button>
@@ -421,9 +421,9 @@ function Footer() {
       <div className="mx-auto max-w-7xl px-5 md:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-2 font-display font-bold">
           <span className="h-8 w-8 rounded-xl neu-sm flex items-center justify-center"><Zap className="h-3.5 w-3.5 text-primary" /></span>
-          Flowgent
+          Zevio
         </div>
-        <div className="text-xs text-muted-foreground">© 2026 Flowgent. Built for service businesses everywhere.</div>
+        <div className="text-xs text-muted-foreground">© 2026 Zevio. Built for service businesses everywhere.</div>
         <div className="flex gap-5 text-xs text-muted-foreground">
           <Link to="/privacy" className="hover:text-foreground">Privacy</Link>
           <a href="#" className="hover:text-foreground">Terms</a>
