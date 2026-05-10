@@ -70,6 +70,7 @@ function Nav() {
   ];
   const routeLinks = [
     { to: "/privacy", label: "Privacy" },
+    { to: "/terms", label: "Terms" },
   ];
   return (
     <header className={`fixed top-0 inset-x-0 z-50 transition-all ${scrolled ? "py-3" : "py-5"}`}>
@@ -426,7 +427,7 @@ function Footer() {
         <div className="text-xs text-muted-foreground">© 2026 Zevio. Built for service businesses everywhere.</div>
         <div className="flex gap-5 text-xs text-muted-foreground">
           <Link to="/privacy" className="hover:text-foreground">Privacy</Link>
-          <a href="#" className="hover:text-foreground">Terms</a>
+          <Link to="/terms" className="hover:text-foreground">Terms</Link>
           <a href="#" className="hover:text-foreground">Docs</a>
         </div>
       </div>
