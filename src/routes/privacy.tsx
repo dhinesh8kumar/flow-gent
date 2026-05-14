@@ -7,6 +7,11 @@ export const Route = createFileRoute("/privacy")({
       { name: "description", content: "How Zevio collects, uses, and protects information across our WhatsApp AI booking platform." },
       { property: "og:title", content: "Privacy Policy — Zevio" },
       { property: "og:description", content: "How Zevio collects, uses, and protects information across our WhatsApp AI booking platform." },
+      { property: "og:url", content: "https://flow-gent.lovable.app/privacy" },
+      { property: "og:type", content: "website" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://flow-gent.lovable.app/privacy" },
     ],
   }),
   component: PrivacyPage,
