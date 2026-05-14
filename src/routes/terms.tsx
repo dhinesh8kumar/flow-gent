@@ -4,9 +4,14 @@ export const Route = createFileRoute("/terms")({
   head: () => ({
     meta: [
       { title: "Terms of Service — Zevio" },
-      { name: "description", content: "The Terms of Service governing your use of Zevio." },
+      { name: "description", content: "Read the Terms of Service governing your use of Zevio's WhatsApp AI booking platform, covering acceptable use, data, and liability." },
       { property: "og:title", content: "Terms of Service — Zevio" },
-      { property: "og:description", content: "The Terms of Service governing your use of Zevio." },
+      { property: "og:description", content: "Read the Terms of Service governing your use of Zevio's WhatsApp AI booking platform, covering acceptable use, data, and liability." },
+      { property: "og:url", content: "https://flow-gent.lovable.app/terms" },
+      { property: "og:type", content: "website" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://flow-gent.lovable.app/terms" },
     ],
   }),
   component: TermsPage,
