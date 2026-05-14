@@ -12,6 +12,33 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: "Zevio — WhatsApp AI Booking for Service Businesses" },
       { name: "description", content: "Multi-tenant SaaS that turns WhatsApp into your booking engine. AI handles customers, your team runs the dashboard." },
+      { property: "og:title", content: "Zevio — WhatsApp AI Booking for Service Businesses" },
+      { property: "og:description", content: "Multi-tenant SaaS that turns WhatsApp into your booking engine. AI handles customers, your team runs the dashboard." },
+      { property: "og:url", content: "https://flow-gent.lovable.app/" },
+      { property: "og:type", content: "website" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://flow-gent.lovable.app/" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Zevio",
+          url: "https://flow-gent.lovable.app/",
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Zevio",
+          url: "https://flow-gent.lovable.app/",
+        }),
+      },
     ],
   }),
   component: Landing,
@@ -293,7 +320,7 @@ function ChatMockup() {
               <Plus className="h-3.5 w-3.5" />
               <Camera className="h-3.5 w-3.5" />
             </div>
-            <button className="h-8 w-8 rounded-full bg-[#075E54] flex items-center justify-center text-white">
+            <button aria-label="Voice message" className="h-8 w-8 rounded-full bg-[#075E54] flex items-center justify-center text-white">
               <Mic className="h-3.5 w-3.5" />
             </button>
           </div>
@@ -407,7 +434,7 @@ function CTA() {
           <h2 className="font-display text-4xl md:text-6xl font-bold tracking-tight">Stop typing. <br /><span className="text-gradient">Start delivering.</span></h2>
           <p className="mt-5 text-muted-foreground max-w-xl mx-auto">Spin up your tenant in 60 seconds. Connect your WhatsApp number. Let Zevio do the rest.</p>
           <form className="mt-8 flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onSubmit={e => e.preventDefault()}>
-            <input type="email" required placeholder="you@company.com" className="flex-1 rounded-full neu-inset px-5 py-3 text-sm focus:outline-none bg-transparent" />
+            <input type="email" required aria-label="Email address" placeholder="you@company.com" className="flex-1 rounded-full neu-inset px-5 py-3 text-sm focus:outline-none bg-transparent" />
             <button className="rounded-full bg-gradient-primary text-primary-foreground px-6 py-3 font-semibold shadow-glow hover:scale-105 transition-transform whitespace-nowrap">Get access</button>
           </form>
         </div>
