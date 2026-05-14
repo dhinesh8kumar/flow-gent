@@ -1,0 +1,9 @@
+# Zevio
+
+> Zevio is a multi-tenant SaaS that turns WhatsApp into a booking engine for service businesses. AI handles customer conversations while teams run operations from a modern dashboard.
+
+## Pages
+
+- [Home](/): Product overview, features, and how Zevio automates WhatsApp bookings.
+- [Privacy Policy](/privacy): How Zevio collects, uses, and protects information.
+- [Terms of Service](/terms): Terms governing the use of the Zevio platform.
