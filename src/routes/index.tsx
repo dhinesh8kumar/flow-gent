@@ -464,12 +464,6 @@ function DashboardShowcase() {
   );
 }
 
-const _legacyFeatures: never[] = [
-  { icon: LayoutDashboard, title: "Modern admin dashboard", desc: "Bookings, fleet, customers and revenue — all in a fast React 18 + TanStack Query interface." },
-  { icon: Database, title: "Live pricing & service catalog", desc: "Edit your services, packages and prices from the dashboard — the AI quotes the new rate on the very next message." },
-  { icon: Globe, title: "Works on the apps customers already use", desc: "No new app to install. Customers chat on WhatsApp, you stay in control from one clean dashboard." },
-];
-
 function Features() {
   return (
     <section id="features" className="py-24 md:py-32 relative">
