@@ -333,7 +333,10 @@ function ChatMockup() {
 }
 
 const features = [
-  // unused placeholder retained
+  { icon: Bot, title: "Conversational AI booking", desc: "Llama-3.1-70B understands natural language orders and quotes accurate prices in real time." },
+  { icon: LayoutDashboard, title: "Modern admin dashboard", desc: "Bookings, fleet, customers and revenue — all in a fast React 18 + TanStack Query interface." },
+  { icon: Database, title: "Live pricing & service catalog", desc: "Edit your services, packages and prices from the dashboard — the AI quotes the new rate on the very next message." },
+  { icon: Globe, title: "Works on the apps customers already use", desc: "No new app to install. Customers chat on WhatsApp, you stay in control from one clean dashboard." },
 ];
 
 /* ---------- macOS-style window frame ---------- */
@@ -461,8 +464,7 @@ function DashboardShowcase() {
   );
 }
 
-const featuresRemoved_placeholder = [
-  { icon: Bot, title: "Conversational AI booking", desc: "Llama-3.1-70B understands natural language orders and quotes accurate prices in real time." },
+const _legacyFeatures: never[] = [
   { icon: LayoutDashboard, title: "Modern admin dashboard", desc: "Bookings, fleet, customers and revenue — all in a fast React 18 + TanStack Query interface." },
   { icon: Database, title: "Live pricing & service catalog", desc: "Edit your services, packages and prices from the dashboard — the AI quotes the new rate on the very next message." },
   { icon: Globe, title: "Works on the apps customers already use", desc: "No new app to install. Customers chat on WhatsApp, you stay in control from one clean dashboard." },
