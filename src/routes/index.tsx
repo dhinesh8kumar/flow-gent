@@ -6,6 +6,8 @@ import {
   Sparkles, ArrowRight, Check, Zap, Globe, Database, Menu, X,
   Phone, Video, Plus, Mic, Smile, Camera, ChevronLeft
 } from "lucide-react";
+import dashboardMain from "@/assets/dashboard-main.png";
+import dashboardBookings from "@/assets/dashboard-bookings.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -470,6 +472,7 @@ function Landing() {
       <Nav />
       <main className="relative z-10">
         <Hero />
+        <DashboardShowcase />
         <Features />
         <Flow />
         <Stats />
