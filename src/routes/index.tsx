@@ -333,6 +333,135 @@ function ChatMockup() {
 }
 
 const features = [
+  // unused placeholder retained
+];
+
+/* ---------- macOS-style window frame ---------- */
+function MacWindow({
+  src,
+  alt,
+  title = "zevio.app",
+  className = "",
+  imgClassName = "",
+}: {
+  src: string;
+  alt: string;
+  title?: string;
+  className?: string;
+  imgClassName?: string;
+}) {
+  return (
+    <div className={`rounded-2xl neu overflow-hidden ${className}`}>
+      <div className="flex items-center gap-2 px-4 py-2.5 border-b border-border/60 bg-background/60">
+        <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />
+        <span className="h-3 w-3 rounded-full bg-[#febc2e]" />
+        <span className="h-3 w-3 rounded-full bg-[#28c840]" />
+        <div className="flex-1 text-center text-[10px] text-muted-foreground font-medium tracking-wide truncate">
+          {title}
+        </div>
+        <span className="w-12" />
+      </div>
+      <div className="bg-background">
+        <img src={src} alt={alt} loading="lazy" className={`w-full h-auto block ${imgClassName}`} />
+      </div>
+    </div>
+  );
+}
+
+function DashboardShowcase() {
+  return (
+    <section id="dashboard" className="py-24 md:py-32 relative overflow-hidden">
+      <div className="absolute inset-0 -z-10 bg-gradient-radial opacity-70" />
+      <div className="mx-auto max-w-7xl px-5 md:px-8">
+        <motion.div {...fade()} className="text-center max-w-2xl mx-auto mb-14">
+          <div className="inline-flex items-center gap-2 text-xs font-semibold text-primary uppercase tracking-widest mb-3">
+            <LayoutDashboard className="h-3.5 w-3.5" /> The dashboard
+          </div>
+          <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tight">
+            Run the whole business from <span className="text-gradient">one calm screen</span>.
+          </h2>
+          <p className="mt-4 text-muted-foreground">
+            Bookings, customers, services and revenue — designed for clarity, built for speed.
+          </p>
+        </motion.div>
+
+        <motion.div {...fade(0.1)} className="relative">
+          <Tilt className="relative mx-auto max-w-5xl">
+            <MacWindow
+              src={dashboardMain}
+              alt="Zevio admin dashboard overview"
+              title="zevio.app — Dashboard"
+              className="shadow-elegant"
+            />
+          </Tilt>
+
+          {/* Floating supporting mockups */}
+          <motion.div
+            {...fade(0.25)}
+            className="hidden lg:block absolute -left-8 -bottom-16 w-72 rotate-[-6deg]"
+          >
+            <MacWindow
+              src={dashboardBookings}
+              alt="Bookings table"
+              title="Bookings"
+              className="shadow-glow"
+            />
+          </motion.div>
+
+          <motion.div
+            {...fade(0.35)}
+            className="hidden lg:block absolute -right-6 -bottom-10 w-64 rotate-[5deg]"
+          >
+            <div className="rounded-2xl neu p-5">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-[10px] font-semibold text-muted-foreground uppercase tracking-widest">Today</span>
+                <span className="h-6 w-6 rounded-lg neu-inset flex items-center justify-center">
+                  <Sparkles className="h-3 w-3 text-primary" />
+                </span>
+              </div>
+              <div className="font-display text-3xl font-bold text-gradient">INR 1,500</div>
+              <div className="mt-1 text-xs text-muted-foreground">Revenue · 3 bookings</div>
+              <div className="mt-4 grid grid-cols-7 gap-1 items-end h-12">
+                {[40, 65, 30, 80, 55, 90, 70].map((h, i) => (
+                  <div key={i} className="rounded-sm bg-gradient-primary opacity-80" style={{ height: `${h}%` }} />
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+
+        {/* Spacer for the absolutely-positioned floating cards on lg */}
+        <div className="hidden lg:block h-24" />
+
+        {/* Mobile-stacked supporting mockups */}
+        <div className="lg:hidden mt-8 grid sm:grid-cols-2 gap-6">
+          <motion.div {...fade(0.2)}>
+            <MacWindow src={dashboardBookings} alt="Bookings table" title="Bookings" />
+          </motion.div>
+          <motion.div {...fade(0.3)}>
+            <div className="rounded-2xl neu p-5 h-full">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-[10px] font-semibold text-muted-foreground uppercase tracking-widest">Today</span>
+                <span className="h-6 w-6 rounded-lg neu-inset flex items-center justify-center">
+                  <Sparkles className="h-3 w-3 text-primary" />
+                </span>
+              </div>
+              <div className="font-display text-3xl font-bold text-gradient">INR 1,500</div>
+              <div className="mt-1 text-xs text-muted-foreground">Revenue · 3 bookings</div>
+              <div className="mt-4 grid grid-cols-7 gap-1 items-end h-12">
+                {[40, 65, 30, 80, 55, 90, 70].map((h, i) => (
+                  <div key={i} className="rounded-sm bg-gradient-primary opacity-80" style={{ height: `${h}%` }} />
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const featuresRemoved_placeholder = [
   { icon: Bot, title: "Conversational AI booking", desc: "Llama-3.1-70B understands natural language orders and quotes accurate prices in real time." },
   { icon: LayoutDashboard, title: "Modern admin dashboard", desc: "Bookings, fleet, customers and revenue — all in a fast React 18 + TanStack Query interface." },
   { icon: Database, title: "Live pricing & service catalog", desc: "Edit your services, packages and prices from the dashboard — the AI quotes the new rate on the very next message." },
